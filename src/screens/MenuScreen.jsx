@@ -76,6 +76,7 @@ export default function MenuScreen({ navigation }) {
                     title="GearHead"
                     style={{ alignItems: "center" }}
                     color="white" // Título em branco
+                    titleStyle={{ fontSize: 28, fontWeight: "bold" }} // Aumenta o tamanho da fonte e deixa em negrito
                 />
                 <Appbar.Action
                     icon="bell"
@@ -157,8 +158,8 @@ export default function MenuScreen({ navigation }) {
                                     <Image
                                         source={{ uri: category.image }}
                                         style={{
-                                            width: 80,
-                                            height: 80,
+                                            width: 100,
+                                            height: 100,
                                             borderRadius: 40, // Para deixar a imagem redonda
                                             marginBottom: 5,
                                         }}
@@ -201,23 +202,6 @@ export default function MenuScreen({ navigation }) {
                         <Text style={{ color: "white" }}>Carros na Espera</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("LoginScreen")}
-                        style={{
-                            width: "30%",
-                            aspectRatio: 1,
-                            backgroundColor: "rgb(139,0,0)",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            marginBottom: 10,
-                        }}
-                    >
-                        <Image
-                            source={{ uri: "https://via.placeholder.com/50" }}
-                            style={{ width: 50, height: 50, marginBottom: 5 }}
-                        />
-                        <Text style={{ color: "white" }}>Histórico de Carros</Text>
-                    </TouchableOpacity>
 
                     <TouchableOpacity
                         onPress={() => navigation.navigate("LoginScreen")}
@@ -229,44 +213,7 @@ export default function MenuScreen({ navigation }) {
                             justifyContent: "center",
                             marginBottom: 10,
                         }}
-                    >
-                        <Image
-                            source={{ uri: "https://via.placeholder.com/50" }}
-                            style={{ width: 50, height: 50, marginBottom: 5 }}
-                        />
-                        <Text style={{ color: "white" }}>Carros Pendentes</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("LoginScreen")}
-                        style={{
-                            width: "30%",
-                            aspectRatio: 1,
-                            backgroundColor: "rgb(139,0,0)",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            marginBottom: 10,
-                        }}
-                    >
-                        <Image
-                            source={{ uri: "https://via.placeholder.com/50" }}
-                            style={{ width: 50, height: 50, marginBottom: 5 }}
-                        />
-                        <Text style={{ color: "white" }}>Associar Carro</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate("LoginScreen")}
-                        style={{
-                            width: "30%",
-                            aspectRatio: 1,
-                            backgroundColor: "rgb(139,0,0)",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            marginBottom: 10,
-                        }}
-                    >
-                        <Image
+                    > <Image
                             source={{ uri: "https://via.placeholder.com/50" }}
                             style={{ width: 50, height: 50, marginBottom: 5 }}
                         />
@@ -283,14 +230,67 @@ export default function MenuScreen({ navigation }) {
                             justifyContent: "center",
                             marginBottom: 10,
                         }}
-                    >
-                        <Image
+                    > <Image
                             source={{ uri: "https://via.placeholder.com/50" }}
                             style={{ width: 50, height: 50, marginBottom: 5 }}
                         />
                         <Text style={{ color: "white" }}>Caixa do Dia</Text>
+                    </TouchableOpacity>
+
+                    {/* Adicione outros botões de serviço aqui */}
+                </View>
+
+                {/* Título "Recomendação para Você" com Ver tudo */}
+                <View style={{ padding: 16, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Title style={{ fontSize: 24, fontWeight: 'bold' }}>Recomendação para Você</Title>
+                    <TouchableOpacity onPress={() => {/* Ação de Ver tudo */}}>
+                        <Text style={{ color: 'rgb(139,0,0)', fontSize: 16 }}>Ver tudo</Text>
                     </TouchableOpacity>
                 </View>
+
+                {/* Cards de Recomendação */}
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: 16 }}>
+                    {/* Card 1 */}
+                    <TouchableOpacity
+                        style={{
+                            width: "48%",
+                            backgroundColor: "#fff",
+                            borderRadius: 10,
+                            padding: 16,
+                            shadowColor: "#000",
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.2,
+                            shadowRadius: 2,
+                            elevation: 3,
+                        }}
+                    >
+                        <Text style={{ fontSize: 18, fontWeight: "bold" }}>Mecânica ABC</Text>
+                        <Text>⭐ 4.5</Text>
+                        <Text>Aberto: 08:00 - 18:00</Text>
+                        <Text>3 km de distância</Text>
+                    </TouchableOpacity>
+
+                    {/* Card 2 */}
+                    <TouchableOpacity
+                        style={{
+                            width: "48%",
+                            backgroundColor: "#fff",
+                            borderRadius: 10,
+                            padding: 16,
+                            shadowColor: "#000",
+                            shadowOffset: { width: 0, height: 2 },
+                            shadowOpacity: 0.2,
+                            shadowRadius: 2,
+                            elevation: 3,
+                        }}
+                    >
+                        <Text style={{ fontSize: 18, fontWeight: "bold" }}>Mecânica XYZ</Text>
+                        <Text>⭐ 4.0</Text>
+                        <Text>Aberto: 09:00 - 19:00</Text>
+                        <Text>5 km de distância</Text>
+                    </TouchableOpacity>
+                </View>
+
             </ScrollView>
         </View>
     );
