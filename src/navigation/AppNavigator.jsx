@@ -19,15 +19,22 @@ export default function AppNavigator() {
             title: "Inicial",
           }}
         />
-  
-      <Stack.Screen
-          name="MecanicaDetalhe1Screen"
-          component={MecanicaDetalhe1Screen}
+
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{
+            title: "Login",
+          }}
+        />
+
+        <Stack.Screen
+          name="RegisterScreen"
+          component={RegisterScreen}
           options={{
             title: "Inicial",
           }}
         />
- 
 
         <Stack.Screen
           name="MenuScreen"
